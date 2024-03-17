@@ -23,6 +23,7 @@ local files_name = {
 	-- 03_equipments
 		"underworld_hana_weapon_scythe",											--- 冥界之镰
 		"underworld_hana_weapon_red_lotus",											--- 红莲
+		"underworld_hana_weapon_astartes",											--- 阿斯塔特
 	---------------------------------------------------------------------------------------
 
 }

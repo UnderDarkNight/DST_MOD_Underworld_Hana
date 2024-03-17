@@ -65,6 +65,13 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["spell_str"] = "放火",
                 ["unlock_str"] = "解锁技能",
             },
+            ["underworld_hana_weapon_astartes"] = {
+                ["name"] = "阿斯塔特",
+                ["inspect_str"] = "附带水元素的力量",
+                ["recipe_desc"] = "附带水元素的力量",
+                ["spell_str"] = "施放",
+                ["unlock_str"] = "解锁技能",
+            },
         --------------------------------------------------------------------
 }
 

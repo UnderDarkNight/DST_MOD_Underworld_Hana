@@ -10,6 +10,9 @@
         return TUNING["underworld_hana.fn"].GetStringsTable(prefab_name or "underworld_hana_weapon_red_lotus")
     end
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----
+    local CD_TIME = TUNING.UNDERWORLD_HANA_DEBUGGING_MODE and 1 or 8
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     local assets =
     {
         Asset("ANIM", "anim/underworld_hana_weapon_red_lotus.zip"),
@@ -181,7 +184,7 @@ local function fn()
                     doer.SoundEmitter:PlaySound("rifts3/mutated_varg/blast_pre_f17")
                 ------------------------------------------------------------------------------------
                 --- CD
-                    inst.components.rechargeable:Discharge(8)
+                    inst.components.rechargeable:Discharge(CD_TIME)
                 ------------------------------------------------------------------------------------
                 --- 耐久
                     inst.components.finiteuses:Use(3)
@@ -209,7 +212,11 @@ local function fn()
         if TheWorld.ismastersim then
             inst:AddComponent("hana_com_acceptable")
             inst.components.hana_com_acceptable:SetOnAcceptFn(function(inst,item,doer)
-                item.components.stackable:Get():Remove()
+                if item.components.stackable then
+                    item.components.stackable:Get():Remove()
+                else
+                    item:Remove()
+                end
                 inst:AddTag("dragon_scales")
                 inst.components.hana_com_data:Set("dragon_scales",true)
                 return true
@@ -264,7 +271,7 @@ local function fn()
     ------------------------------------------------------------------------------
     --- rechargeable 冷却系统
         inst:AddComponent("rechargeable")
-        inst.components.rechargeable:SetMaxCharge(8)
+        inst.components.rechargeable:SetMaxCharge(CD_TIME)
         -- inst.components.rechargeable:SetOnChargedFn(function(inst)  ---- 冷却时间到了
         --     inst:AddTag("can_cast_spell")
         -- end)

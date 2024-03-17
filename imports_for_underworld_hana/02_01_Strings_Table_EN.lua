@@ -49,6 +49,13 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["spell_str"] = "Commit Arson",
                 ["unlock_str"] = "Unlock Spell",
             },
+            ["underworld_hana_weapon_astartes"] = {
+                ["name"] = "Astartes",
+                ["inspect_str"] = "With the power of the water element",
+                ["recipe_desc"] = "With the power of the water element",
+                ["spell_str"] = "Cast Spell",
+                ["unlock_str"] = "Unlock Spell",
+            },
         --------------------------------------------------------------------
 
 }
