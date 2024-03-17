@@ -69,7 +69,8 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["name"] = "阿斯塔特",
                 ["inspect_str"] = "附带水元素的力量",
                 ["recipe_desc"] = "附带水元素的力量",
-                ["spell_str"] = "施放",
+                ["spell_str_a"] = "炸海",
+                ["spell_str_b"] = "激活buff",
                 ["unlock_str"] = "解锁技能",
             },
         --------------------------------------------------------------------

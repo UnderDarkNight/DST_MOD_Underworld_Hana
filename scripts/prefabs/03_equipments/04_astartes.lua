@@ -249,12 +249,12 @@ local function fn()
     -------------------------------------------------------------------------------------
     --- 技能
         inst:ListenForEvent("underworld_hana.OnEntityReplicated.hana_com_point_and_target_spell_caster",function(inst,replica_com)
-            replica_com:SetText("underworld_hana_weapon_astartes",GetStringsTable()["spell_str"])
+            replica_com:SetText("underworld_hana_weapon_astartes",GetStringsTable()["spell_str_a"])
             replica_com:SetSGAction("quickcastspell")
             replica_com:SetDistance(20)
             replica_com:SetPriority(999)
             replica_com:SetAllowCanCastOnImpassable(true)
-            replica_com:SetTestFn(function(inst,doer,target,pt,right_click)
+            replica_com:SetTestFn(function(inst,doer,target,pt,right_click)     --- 以30FPS 执行，注意CPU性能消耗
                 if not right_click then
                     return false
                 end
@@ -279,9 +279,11 @@ local function fn()
                             is_ocean_flag = true
                         end
                         if is_ocean_flag then
-                            replica_com:SetSGAction("quickcastspell")
+                            replica_com:SetSGAction("quickcastspell")   --- 切换动作sg
+                            replica_com:SetText("underworld_hana_weapon_astartes",GetStringsTable()["spell_str_a"]) --- 切换鼠标显示文本
                         else
-                            replica_com:SetSGAction("castspell")
+                            replica_com:SetSGAction("castspell")    --- 切换动作sg
+                            replica_com:SetText("underworld_hana_weapon_astartes",GetStringsTable()["spell_str_b"]) --- 切换鼠标显示文本
                         end
 
 

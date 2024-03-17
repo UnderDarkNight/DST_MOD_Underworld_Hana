@@ -54,6 +54,8 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["inspect_str"] = "With the power of the water element",
                 ["recipe_desc"] = "With the power of the water element",
                 ["spell_str"] = "Cast Spell",
+                ["spell_str_a"] = "Blow up the sea",
+                ["spell_str_b"] = "Active Buff",
                 ["unlock_str"] = "Unlock Spell",
             },
         --------------------------------------------------------------------
