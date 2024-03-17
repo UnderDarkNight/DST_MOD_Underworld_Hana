@@ -87,8 +87,8 @@ local function fn()
     inst.AnimState:SetBank("underworld_hana_projectile_faded_memory")
     inst.AnimState:SetBuild("underworld_hana_projectile_faded_memory")
     inst.AnimState:PlayAnimation("idle",true)
-    -- local scaleNum = 0.5
-    -- inst.AnimState:SetScale(scaleNum,scaleNum,scaleNum)
+    local scaleNum = 2
+    inst.AnimState:SetScale(scaleNum,scaleNum,scaleNum)
 
     -----------------------------------------------------------------------------------
         inst.__tail_deta_time_net_var = net_float(inst.GUID,"underworld_hana_projectile_faded_memory","underworld_hana_projectile_faded_memory")

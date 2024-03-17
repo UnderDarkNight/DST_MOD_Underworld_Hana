@@ -30,6 +30,11 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
            
         --------------------------------------------------------------------
         --- 02_items
+            ["underworld_hana_item_faded_memory"] = {
+                ["name"] = "褪色的记忆",
+                ["inspect_str"] = "褪色的记忆",
+                ["recipe_desc"] = "褪色的记忆",
+            },
         --------------------------------------------------------------------
         --- 03_equipments
             ["underworld_hana_equipment_cloak_1"] = {
@@ -52,6 +57,12 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["inspect_str"] = "砍树挖矿一流",
                 ["recipe_desc"] = "砍树挖矿一流",
                 ["action_str"] = "冥界之舞"
+            },
+            ["underworld_hana_weapon_red_lotus"] = {
+                ["name"] = "红莲",
+                ["inspect_str"] = "充满火焰的菜刀",
+                ["recipe_desc"] = "充满火焰的菜刀",
+                ["action_str"] = "放火"
             },
         --------------------------------------------------------------------
 }

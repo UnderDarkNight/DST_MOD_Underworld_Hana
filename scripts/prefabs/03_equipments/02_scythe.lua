@@ -121,10 +121,16 @@ local function fn()
                     ------------------------------------------------------------------------------------
                 end
                 local x,y,z = doer.Transform:GetWorldPosition()
+                if target then
+                    x,y,z = target.Transform:GetWorldPosition()
+                end
+                if pt then
+                    x,y,z = pt.x, pt.y, pt.z
+                end
                 local musthavetags = nil
                 local canthavetags = nil
                 local musthaveoneoftags = {"CHOP_workable","pickable","MINE_workable"}
-                local range = TUNING.VOIDCLOTH_SCYTHE_HARVEST_RADIUS*2
+                local range = TUNING.VOIDCLOTH_SCYTHE_HARVEST_RADIUS
                 local ents = TheSim:FindEntities(x, 0, z, range, musthavetags, canthavetags, musthaveoneoftags)
                 for k, temp_inst in pairs(ents) do
                     -- work_target(doer,target)
@@ -141,7 +147,7 @@ local function fn()
 
 
     inst:AddComponent("weapon")
-    inst.components.weapon:SetDamage(TUNING["underworld_hana.Config"].SCYTHE_DMG or 51)
+    inst.components.weapon:SetDamage(34)
 
     inst:AddComponent("inspectable")
 
@@ -164,19 +170,24 @@ local function fn()
         inst.components.finiteuses:SetUses(100)
         inst.components.finiteuses:SetOnFinished(inst.Remove)
     ------------------------------------------------------------------------------
-        inst:ListenForEvent("equipped",function(_,_table)
-            if _table and _table.owner and _table.owner.prefab == "underworld_hana" then
-                inst:AddComponent("tool")
-                -- inst.components.tool:SetAction(ACTIONS.HAMMER) --- 锤子
-                inst.components.tool:SetAction(ACTIONS.MINE)  -- 矿锄
-                inst.components.tool:SetAction(ACTIONS.CHOP)  -- 斧头
-            end
-        end)
-        inst:ListenForEvent("unequipped",function()
-            if inst.components.tool then
-                inst:RemoveComponent("tool")
-            end
-        end)
+        inst:AddComponent("tool")
+        -- inst.components.tool:SetAction(ACTIONS.HAMMER) --- 锤子
+        inst.components.tool:SetAction(ACTIONS.MINE)  -- 矿锄
+        inst.components.tool:SetAction(ACTIONS.CHOP)  -- 斧头
+    ------------------------------------------------------------------------------
+        -- inst:ListenForEvent("equipped",function(_,_table)
+        --     if _table and _table.owner and _table.owner.prefab == "underworld_hana" then
+        --         inst:AddComponent("tool")
+        --         -- inst.components.tool:SetAction(ACTIONS.HAMMER) --- 锤子
+        --         inst.components.tool:SetAction(ACTIONS.MINE)  -- 矿锄
+        --         inst.components.tool:SetAction(ACTIONS.CHOP)  -- 斧头
+        --     end
+        -- end)
+        -- inst:ListenForEvent("unequipped",function()
+        --     if inst.components.tool then
+        --         inst:RemoveComponent("tool")
+        --     end
+        -- end)
     ------------------------------------------------------------------------------
 
     ------------------------------------------------------------------------------

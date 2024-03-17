@@ -16,10 +16,11 @@ return function(inst)
     end
 
     local modules = {
-        "prefabs/01_character/underworld_hana_key_modules/01_animstate_hook",                      ---- 动画组件hook
-        "prefabs/01_character/underworld_hana_key_modules/02_cloak_sys",                           ---- 披风系统
-        "prefabs/01_character/underworld_hana_key_modules/03_spriter_sys",                              ---- 精灵系统
+        "prefabs/01_character/underworld_hana_key_modules/01_animstate_hook",                       ---- 动画组件hook
+        "prefabs/01_character/underworld_hana_key_modules/02_cloak_sys",                            ---- 披风系统
+        "prefabs/01_character/underworld_hana_key_modules/03_spriter_sys",                          ---- 精灵系统
         "prefabs/01_character/underworld_hana_key_modules/04_builder_com_hook_for_tag_sys",         ---- builder 组件 hook
+        "prefabs/01_character/underworld_hana_key_modules/05_faded_memory_sys",                     ---- 褪色的记忆
 
     }
     for k, lua_addr in pairs(modules) do
