@@ -21,10 +21,33 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
             -- },        
         --------------------------------------------------------------------
         --- 03_equipments
+            ["underworld_hana_equipment_cloak_1"] = {
+                ["name"] = "Hana's Cloak",
+                ["inspect_str"] = "Hana's Cloak",
+                ["recipe_desc"] = "Hana's Cloak",
+            },
+            ["underworld_hana_equipment_cloak_2"] = {
+                ["name"] = "Hana's Cloak",
+                ["inspect_str"] = "Hana's Cloak",
+                ["recipe_desc"] = "Hana's Cloak",
+            },
+            ["underworld_hana_equipment_cloak_3"] = {
+                ["name"] = "Hana's Cloak",
+                ["inspect_str"] = "Hana's Cloak",
+                ["recipe_desc"] = "Hana's Cloak",
+            },
             ["underworld_hana_weapon_scythe"] = {
                 ["name"] = "Scythe From Underworld",
-                ["inspect_str"] = "砍树挖矿一流",
-                ["recipe_desc"] = "砍树挖矿一流",
+                ["inspect_str"] = "Chopping down trees and mining is first class",
+                ["recipe_desc"] = "Chopping down trees and mining is first class",
+                ["action_str"] = STRINGS.ACTIONS.SCYTHE,
+            },
+            ["underworld_hana_weapon_red_lotus"] = {
+                ["name"] = "Red lotus",
+                ["inspect_str"] = "Flame-filled chopper",
+                ["recipe_desc"] = "Flame-filled chopper",
+                ["spell_str"] = "Commit Arson",
+                ["unlock_str"] = "Unlock Spell",
             },
         --------------------------------------------------------------------
 

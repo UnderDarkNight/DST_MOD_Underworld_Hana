@@ -57,13 +57,17 @@ local function fn()
 
     inst.entity:SetPristine()
     -------------------------------------------------------------------------------------
-    --- 收割动作
+    --- 技能
         inst:ListenForEvent("underworld_hana.OnEntityReplicated.hana_com_point_and_target_spell_caster",function(inst,replica_com)
-            replica_com:SetText("underworld_hana_weapon_red_lotus",GetStringsTable()["action_str"])
+            replica_com:SetText("underworld_hana_weapon_red_lotus",GetStringsTable()["spell_str"])
             replica_com:SetSGAction("underworld_hana_scythe_harvest")
             replica_com:SetDistance(20)
             replica_com:SetPriority(999)
+            replica_com:SetAllowCanCastOnImpassable(true)
             replica_com:SetTestFn(function(inst,doer,target,pt,right_click)
+                if not inst:HasTag("dragon_scales") then
+                    return false
+                end
                 -- pcall(function()
                 --     print(inst.replica.inventoryitem.classified.recharge:value())
                 -- end)
@@ -76,16 +80,9 @@ local function fn()
             end)
 
         end)
-        -- inst:ListenForEvent("rechargetimechange",function(_,_table)
-        --     print("+++++",_table and _table.t)
-        -- end)
         if TheWorld.ismastersim then
             inst:AddComponent("hana_com_point_and_target_spell_caster")
             inst.components.hana_com_point_and_target_spell_caster:SetSpellFn(function(inst,doer,target,pt)
-                -- if doer.__test_fn then
-                --     doer.__test_fn(inst,doer,target,pt)
-                --     return true
-                -- end
                 ------------------------------------------------------------------------------------
                 --- 冷却
                     if not inst.components.rechargeable:IsCharged() then
@@ -155,18 +152,27 @@ local function fn()
                             local flame_range = 4
                             local flame_base_pt = player_pt+get_offset_pt_by_angle(angle,3)
                             local musthavetags = nil
-                            local canthavetags = {"burnt","player","INLIMBO", "notarget", "noattack", "flight", "invisible"}
+                            local canthavetags = {"burnt","player","INLIMBO", "notarget", "noattack", "flight", "invisible","companion"}
                             local musthaveoneoftags = nil
                             local ents = TheSim:FindEntities(flame_base_pt.x, 0, flame_base_pt.z, flame_range, musthavetags, canthavetags, musthaveoneoftags)
                             for k, temp_target in pairs(ents) do
                                 if temp_target and temp_target:IsValid() then
-                                    if temp_target.components.burnable then
-                                        if not temp_target.components.burnable:IsBurning() then
-                                            temp_target.components.burnable:Ignite(true, doer)
+                                    ----------------- 点燃
+                                        if temp_target.components.burnable then
+                                            if not temp_target.components.burnable:IsBurning() then
+                                                temp_target.components.burnable:Ignite(true, doer)
+                                            end
                                         end
-                                    elseif temp_target.components.lootdropper then
-                                        temp_target.components.lootdropper:DropLoot()
-                                    end
+                                    ----------------- 造成伤害
+                                        if temp_target.components.combat then
+                                            -- if temp_target.components.burnable then
+                                            --     temp_target.components.combat:GetAttacked(doer,51,inst)
+                                            -- else
+                                            --     temp_target.components.combat:GetAttacked(doer,51*2,inst)                                                
+                                            -- end
+                                            doer.components.combat:DoAttack(temp_target,inst)
+                                        end
+
                                 end
                             end
                     end)
@@ -184,28 +190,77 @@ local function fn()
             end)
         end
     -------------------------------------------------------------------------------------
+    --- 物品接受 dragon_scales
+        inst:ListenForEvent("underworld_hana.OnEntityReplicated.hana_com_acceptable",function(inst,replica_com)
+            replica_com:SetSGAction("dolongaction")
+            replica_com:SetTestFn(function(inst,item,doer)
+                if item.prefab ~= "dragon_scales" then
+                    return false
+                end
+                if inst:HasTag("dragon_scales") then
+                    return false
+                else
+                    return true
+                end
+                return false
+            end)
+            replica_com:SetText("underworld_hana_weapon_red_lotus",GetStringsTable()["unlock_str"])
+        end)
+        if TheWorld.ismastersim then
+            inst:AddComponent("hana_com_acceptable")
+            inst.components.hana_com_acceptable:SetOnAcceptFn(function(inst,item,doer)
+                item.components.stackable:Get():Remove()
+                inst:AddTag("dragon_scales")
+                inst.components.hana_com_data:Set("dragon_scales",true)
+                return true
+            end)
+            ---- 记录已经添加过 龙鳞
+            inst:AddComponent("hana_com_data")
+            inst.components.hana_com_data:AddOnLoadFn(function(com)
+                if com:Get("dragon_scales") then
+                    inst:AddTag("dragon_scales")
+                end
+            end)
+        end
+    -------------------------------------------------------------------------------------
     if not TheWorld.ismastersim then
         return inst
     end
 
+    ------------------------------------------------------------------------------
+        inst:AddComponent("weapon")
+        inst.components.weapon:SetDamage(51)
+        local old_GetDamage = inst.components.weapon.GetDamage
+        inst.components.weapon.GetDamage = function(self,attacker,target)
+            local dmg, spdmg = old_GetDamage(self,attacker,target)
+            if target then
+                if target.components.burnable then
+                    dmg = 51
+                else
+                    dmg = dmg*2
+                end
+            end
+            return dmg, spdmg
+        end
+    ------------------------------------------------------------------------------
+        inst:AddComponent("inspectable")
 
-    inst:AddComponent("weapon")
-    inst.components.weapon:SetDamage(51)
+        inst:AddComponent("inventoryitem")
+        -- inst.components.inventoryitem:ChangeImageName("voidcloth_scythe")
+        inst.components.inventoryitem.imagename = "underworld_hana_weapon_red_lotus"
+        inst.components.inventoryitem.atlasname = "images/inventoryimages/underworld_hana_weapon_red_lotus.xml"
 
-    inst:AddComponent("inspectable")
+        inst:AddComponent("equippable")
 
-    inst:AddComponent("inventoryitem")
-    -- inst.components.inventoryitem:ChangeImageName("voidcloth_scythe")
-    inst.components.inventoryitem.imagename = "underworld_hana_weapon_red_lotus"
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/underworld_hana_weapon_red_lotus.xml"
+        inst.components.equippable:SetOnEquip(onequip)
+        inst.components.equippable:SetOnUnequip(onunequip)
 
-    inst:AddComponent("equippable")
+        MakeHauntableLaunch(inst)
 
-    inst.components.equippable:SetOnEquip(onequip)
-    inst.components.equippable:SetOnUnequip(onunequip)
-
-    MakeHauntableLaunch(inst)
-
+    ------------------------------------------------------------------------------
+    --- 位面伤害
+        inst:AddComponent("planardamage")
+	    inst.components.planardamage:SetBaseDamage(25.5)
     ------------------------------------------------------------------------------
     --- rechargeable 冷却系统
         inst:AddComponent("rechargeable")

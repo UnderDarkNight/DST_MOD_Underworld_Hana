@@ -62,7 +62,8 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["name"] = "红莲",
                 ["inspect_str"] = "充满火焰的菜刀",
                 ["recipe_desc"] = "充满火焰的菜刀",
-                ["action_str"] = "放火"
+                ["spell_str"] = "放火",
+                ["unlock_str"] = "解锁技能",
             },
         --------------------------------------------------------------------
 }
