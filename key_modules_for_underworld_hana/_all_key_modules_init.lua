@@ -24,5 +24,9 @@ modimport("key_modules_for_underworld_hana/03_AnimState_Hook/_All_Original_AnimS
 modimport("key_modules_for_underworld_hana/04_recipes/__all_recipes_init.lua") 
 -- 物品配方
 
+modimport("key_modules_for_underworld_hana/05_origin_prefab_upgrade/__all_origin_prefabs_init.lua") 
+-- 官方的prefab 修改
+
+
 
 

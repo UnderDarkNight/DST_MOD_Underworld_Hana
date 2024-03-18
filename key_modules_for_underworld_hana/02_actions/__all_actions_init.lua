@@ -12,6 +12,7 @@ modimport("key_modules_for_underworld_hana/02_actions/04_com_point_and_spell_cas
 modimport("key_modules_for_underworld_hana/02_actions/05_sg_equip_action.lua") --- 穿戴动作
 
 modimport("key_modules_for_underworld_hana/02_actions/06_sg_action_scythe_harvest.lua") --- 镰刀收割动作
+modimport("key_modules_for_underworld_hana/02_actions/07_sg_action_jump_split.lua") --- 跳劈
 
 
 

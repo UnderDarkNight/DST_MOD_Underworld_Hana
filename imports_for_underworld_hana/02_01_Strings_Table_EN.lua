@@ -64,6 +64,13 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["recipe_desc"] = "A very special staff.",
                 ["spell_str"] = "Cast Spell",
                 ["unlock_str"] = "Unlock Spell",
+            },
+            ["underworld_hana_weapon_deep_love"] = {
+                ["name"] = "Deep Love",
+                ["inspect_str"] = "A very special staff.",
+                ["recipe_desc"] = "A very special staff.",
+                ["spell_str"] = "Jump Split",
+                ["unlock_str"] = "Unlock Spell",
 
             },
         --------------------------------------------------------------------

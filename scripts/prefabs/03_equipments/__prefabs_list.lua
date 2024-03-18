@@ -28,11 +28,12 @@ local Prefabs_addr_base = string.sub(temp_addr,1,temp_str_index2) .. "/"    --- 
 local prefabs_name_list = {
 
 
-    "01_cloak",                           --- 披风
-    "02_scythe",                           --- 冥界之镰
-    "03_red_lotus",                           --- 红莲刀
-    "04_astartes",                           --- 阿斯塔特
+    "01_cloak",                             --- 披风
+    "02_scythe",                            --- 冥界之镰
+    "03_red_lotus",                         --- 红莲刀
+    "04_astartes",                          --- 阿斯塔特
     "05_messiah",                           --- 弥赛亚
+    "06_deep_love",                         --- 爱之深
 
 }
 

@@ -78,3 +78,22 @@
     )
     RemoveRecipeFromFilter("underworld_hana_weapon_messiah","MODS")                       -- -- 在【模组物品】标签里移除这个。
 --------------------------------------------------------------------------------------------------------------------------------------------
+---- 爱之深
+--------------------------------------------------------------------------------------------------------------------------------------------
+    AddRecipeToFilter("underworld_hana_weapon_deep_love","CHARACTER")     ---- 添加物品到目标标签
+    AddRecipe2(
+        "underworld_hana_weapon_deep_love",            --  --  inst.prefab  实体名字
+        { Ingredient("livinglog", 2),Ingredient("steelwool", 1),Ingredient("goldnugget", 5) }, 
+        TECH.NONE, 
+        {
+            -- no_deconstruction=true,
+            -- numtogive = 3,
+            builder_tag = "underworld_hana",
+            atlas = "images/inventoryimages/underworld_hana_weapon_deep_love.xml",
+            -- atlas = GetInventoryItemAtlas("dock_kit.tex"),
+            image = "underworld_hana_weapon_deep_love.tex",
+        },
+        {"CHARACTER","WEAPONS"}
+    )
+    RemoveRecipeFromFilter("underworld_hana_weapon_deep_love","MODS")                       -- -- 在【模组物品】标签里移除这个。
+--------------------------------------------------------------------------------------------------------------------------------------------
