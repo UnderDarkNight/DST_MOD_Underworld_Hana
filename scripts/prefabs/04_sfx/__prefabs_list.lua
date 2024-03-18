@@ -31,6 +31,7 @@ local prefabs_name_list = {
     "01_spell_flame",                           --- 技能火焰
     "02_spriter_mini",                           --- 精灵特效
     "03_spriter_sanityaura",                           --- 精灵特效
+    "04_lightning",                             --- 闪电特效
 
 }
 

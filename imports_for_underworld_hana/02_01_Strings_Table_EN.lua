@@ -58,6 +58,14 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["spell_str_b"] = "Active Buff",
                 ["unlock_str"] = "Unlock Spell",
             },
+            ["underworld_hana_weapon_messiah"] = {
+                ["name"] = "Messiah",
+                ["inspect_str"] = "A very special staff.",
+                ["recipe_desc"] = "A very special staff.",
+                ["spell_str"] = "Cast Spell",
+                ["unlock_str"] = "Unlock Spell",
+
+            },
         --------------------------------------------------------------------
 
 }

@@ -209,25 +209,27 @@ local flg,error_code = pcall(function()
             -- ThePlayer.SoundEmitter:PlaySound("rifts3/mutated_varg/blast_pre_f17")
             
     ----------------------------------------------------------------------------------------------------------------
-    ---- 海洋
-                ThePlayer.__test_fn = function(inst,doer,target,pt)
-                    ----------------------------------------------------------------------------
-                        inst.components.planardamage:SetBaseDamage(17)
-                        inst.components.weapon:SetOnAttack(function(inst, attacker, target)
-                            if target.components.freezable ~= nil and target:IsValid() then
-                                target.components.freezable:AddColdness(1)
-                                target.components.freezable:SpawnShatterFX()
-                            end
-                        end)
-                        if inst.__buff_task ~= nil then
-                            inst.__buff_task:Cancel()
-                        end
-                        inst.__buff_task = inst:DoTaskInTime(10,function()
-                            inst.components.planardamage:SetBaseDamage(0)
-                            inst.components.weapon:SetOnAttack(nil)
-                        end)
-                    ----------------------------------------------------------------------------
-                end
+    ---- 特效
+                -- ThePlayer.__test_fn = function(inst,owner)
+                --     if inst.____light_fx then
+                --         inst.____light_fx:Remove()
+                --     end
+                --     local fx = SpawnPrefab("underworld_hana_weapon_messiah_fx")
+                --     fx.entity:SetParent(owner.entity)
+                --     fx.entity:AddFollower()
+                --     fx.Follower:FollowSymbol(owner.GUID, "swap_object",45, -200, 1)
+                --     fx.Light:Enable(true)
+                --     inst.____light_fx = fx
+                -- end
+                    -- TheWorld:PushEvent("ms_deltamoisture", 50000)
+
+                    -- SpawnPrefab("underworld_hana_fx_spell_lightning"):PushEvent("Set",{
+                    --     target = ThePlayer,
+                    -- })
+                    -- ThePlayer.SoundEmitter:PlaySound("dontstarve/rain/thunder_close", nil, 10, true)
+                    TheWorld:PushEvent("ms_sendlightningstrike", Vector3(x+0,y,z))
+                    -- ThePlayer.components.playerlightningtarget:DoStrike()
+                    -- ThePlayer.SoundEmitter:PlaySound("dontstarve/rain/thunder_close")
     ----------------------------------------------------------------------------------------------------------------
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")
 end)

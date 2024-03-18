@@ -73,6 +73,13 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["spell_str_b"] = "激活buff",
                 ["unlock_str"] = "解锁技能",
             },
+            ["underworld_hana_weapon_messiah"] = {
+                ["name"] = "弥赛亚",
+                ["inspect_str"] = "很特别的法杖",
+                ["recipe_desc"] = "很特别的法杖",
+                ["spell_str"] = "施法",
+                ["unlock_str"] = "解锁技能",
+            },
         --------------------------------------------------------------------
 }
 

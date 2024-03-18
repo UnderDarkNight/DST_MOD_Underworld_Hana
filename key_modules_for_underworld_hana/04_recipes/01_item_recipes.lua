@@ -59,3 +59,22 @@
     )
     RemoveRecipeFromFilter("underworld_hana_weapon_astartes","MODS")                       -- -- 在【模组物品】标签里移除这个。
 --------------------------------------------------------------------------------------------------------------------------------------------
+---- 弥赛亚
+--------------------------------------------------------------------------------------------------------------------------------------------
+    AddRecipeToFilter("underworld_hana_weapon_messiah","CHARACTER")     ---- 添加物品到目标标签
+    AddRecipe2(
+        "underworld_hana_weapon_messiah",            --  --  inst.prefab  实体名字
+        { Ingredient("bluegem", 2),Ingredient("moonglass", 10),Ingredient("nightmarefuel", 10) }, 
+        TECH.NONE, 
+        {
+            -- no_deconstruction=true,
+            -- numtogive = 3,
+            builder_tag = "underworld_hana",
+            atlas = "images/inventoryimages/underworld_hana_weapon_messiah.xml",
+            -- atlas = GetInventoryItemAtlas("dock_kit.tex"),
+            image = "underworld_hana_weapon_messiah.tex",
+        },
+        {"CHARACTER","MAGIC","WEAPONS"}
+    )
+    RemoveRecipeFromFilter("underworld_hana_weapon_messiah","MODS")                       -- -- 在【模组物品】标签里移除这个。
+--------------------------------------------------------------------------------------------------------------------------------------------

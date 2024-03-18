@@ -32,6 +32,7 @@ local prefabs_name_list = {
     "02_scythe",                           --- 冥界之镰
     "03_red_lotus",                           --- 红莲刀
     "04_astartes",                           --- 阿斯塔特
+    "05_messiah",                           --- 弥赛亚
 
 }
 
