@@ -74,8 +74,7 @@ nil,
             self.str_update_fn(self.inst,doer,target,pt)
         end
     end
----------------------------------------------------------------------------------------------------
------ pre action
+-------------------------------------------------------------------------------------------------------- pre action
     function hana_com_point_and_target_spell_caster:SetPreActionFn(fn)
         self.__pre_action_fn = fn
     end
@@ -85,6 +84,11 @@ nil,
         end
     end
 ---------------------------------------------------------------------------------------------------
+----- 是否允许坐骑上使用
+    function hana_com_point_and_target_spell_caster:SetAllowCastWhenRiding(flag)
+        self._allow_cast_when_riding = flag or false
+    end
+---------------------------------------------------------------------------------------------------
 ----- test 函数
     function hana_com_point_and_target_spell_caster:SetTestFn(fn)
         if type(fn) == "function" then
@@ -92,6 +96,9 @@ nil,
         end
     end
     function hana_com_point_and_target_spell_caster:Test(doer,target,pt,right_click)
+        if not self._allow_cast_when_riding and doer.replica.rider and doer.replica.rider:IsRiding() then
+            return false
+        end
         if self.__test_fn then
             return self.__test_fn(self.inst,doer,target,pt,right_click)
         end

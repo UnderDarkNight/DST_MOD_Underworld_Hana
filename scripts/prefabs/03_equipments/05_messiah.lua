@@ -165,6 +165,8 @@
                 replica_com:SetDistance(20)
                 replica_com:SetPriority(999)
                 replica_com:SetAllowCanCastOnImpassable(true)
+                replica_com:SetAllowCastWhenRiding(true)
+
                 replica_com:SetTestFn(function(inst,doer,target,pt,right_click)     --- 以30FPS 执行，注意CPU性能消耗
                     if not inst:HasTag("nightstick") then
                         return false
