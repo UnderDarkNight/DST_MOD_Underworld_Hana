@@ -27,6 +27,9 @@ modimport("key_modules_for_underworld_hana/04_recipes/__all_recipes_init.lua")
 modimport("key_modules_for_underworld_hana/05_origin_prefab_upgrade/__all_origin_prefabs_init.lua") 
 -- 官方的prefab 修改
 
+modimport("key_modules_for_underworld_hana/06_origin_components_upgrade/__all_com_init.lua") 
+-- 官方的component 修改
+
 
 
 

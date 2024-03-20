@@ -87,6 +87,18 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["spell_str"] = "跳劈",
                 ["unlock_str"] = "解锁技能",
             },
+            ["underworld_hana_weapon_innocent"] = {
+                ["name"] = "无邪",
+                ["inspect_str"] = "一把精致的伞",
+                ["recipe_desc"] = "一把精致的伞",
+                ["spell_str"] = "开伞",
+            },
+            ["underworld_hana_weapon_irradiance"] = {
+                ["name"] = "辐光",
+                ["inspect_str"] = "一把精致的伞",
+                ["recipe_desc"] = "一把精致的伞",
+                ["spell_str"] = "关伞",
+            },
         --------------------------------------------------------------------
 }
 

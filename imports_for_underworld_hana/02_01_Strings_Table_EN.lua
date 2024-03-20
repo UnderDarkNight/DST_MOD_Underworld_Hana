@@ -73,6 +73,18 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["unlock_str"] = "Unlock Spell",
 
             },
+            ["underworld_hana_weapon_innocent"] = {
+                ["name"] = "Innocent",
+                ["inspect_str"] = "An exquisite umbrella",
+                ["recipe_desc"] = "An exquisite umbrella",
+                ["spell_str"] = "Unfolding",
+            },
+            ["underworld_hana_weapon_irradiance"] = {
+                ["name"] = "Irradiance",
+                ["inspect_str"] = "An exquisite umbrella",
+                ["recipe_desc"] = "An exquisite umbrella",
+                ["spell_str"] = "Folding",
+            },
         --------------------------------------------------------------------
 
 }

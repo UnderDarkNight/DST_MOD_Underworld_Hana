@@ -26,6 +26,8 @@ local files_name = {
 		"underworld_hana_weapon_astartes",											--- 阿斯塔特
 		"underworld_hana_weapon_messiah",											--- 弥赛亚
 		"underworld_hana_weapon_deep_love",											--- 爱之深
+		"underworld_hana_weapon_innocent",											--- 无邪
+		"underworld_hana_weapon_irradiance",										--- 辐光
 	---------------------------------------------------------------------------------------
 
 }
