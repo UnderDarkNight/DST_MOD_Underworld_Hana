@@ -85,6 +85,12 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["recipe_desc"] = "An exquisite umbrella",
                 ["spell_str"] = "Folding",
             },
+            ["underworld_hana_equipment_bow"] = {
+                ["name"] = "Hana's Bow",
+                ["inspect_str"] = "Hana's Bow",
+                ["recipe_desc"] = "Hana's Bow",
+                ["action_str"] = "Switch",
+            },
         --------------------------------------------------------------------
 
 }

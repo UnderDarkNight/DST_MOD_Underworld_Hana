@@ -36,6 +36,7 @@ local prefabs_name_list = {
     "06_deep_love",                         --- 爱之深
     "07_innocent",                          --- 无邪
     "08_irradiance",                        --- 辐光
+    "09_bow",                               --- 蝴蝶结
 
 }
 

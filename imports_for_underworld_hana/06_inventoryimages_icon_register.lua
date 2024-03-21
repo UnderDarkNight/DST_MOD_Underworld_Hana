@@ -28,6 +28,7 @@ local files_name = {
 		"underworld_hana_weapon_deep_love",											--- 爱之深
 		"underworld_hana_weapon_innocent",											--- 无邪
 		"underworld_hana_weapon_irradiance",										--- 辐光
+		"underworld_hana_equipment_bow",											--- 蝴蝶结
 	---------------------------------------------------------------------------------------
 
 }

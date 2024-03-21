@@ -99,6 +99,12 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["recipe_desc"] = "一把精致的伞",
                 ["spell_str"] = "关伞",
             },
+            ["underworld_hana_equipment_bow"] = {
+                ["name"] = "冥界使者的蝴蝶结",
+                ["inspect_str"] = "冥界使者的蝴蝶结",
+                ["recipe_desc"] = "冥界使者的蝴蝶结",
+                ["action_str"] = "切换",
+            },
         --------------------------------------------------------------------
 }
 
