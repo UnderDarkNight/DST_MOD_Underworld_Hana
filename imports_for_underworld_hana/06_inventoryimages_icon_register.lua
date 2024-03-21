@@ -30,6 +30,8 @@ local files_name = {
 		"underworld_hana_weapon_irradiance",										--- 辐光
 		"underworld_hana_equipment_bow",											--- 蝴蝶结
 		"underworld_hana_equipment_panda_brooch",									--- 熊猫胸针
+		"underworld_hana_equipment_great_earth_brooch",								--- 大地胸针
+		"underworld_hana_equipment_ice_queen_ring",									--- 冰雪女王指环
 	---------------------------------------------------------------------------------------
 
 }

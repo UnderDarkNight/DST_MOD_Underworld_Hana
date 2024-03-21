@@ -38,6 +38,8 @@ local prefabs_name_list = {
     "08_irradiance",                        --- 辐光
     "09_bow",                               --- 蝴蝶结
     "10_panda_brooch",                      --- 疯狂熊猫胸针
+    "11_great_earth_brooch",                --- 大地胸针
+    "12_ice_queen_ring",                    --- 冰雪女王的戒指
 
 }
 

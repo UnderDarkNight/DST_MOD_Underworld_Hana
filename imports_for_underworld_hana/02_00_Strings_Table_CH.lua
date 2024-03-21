@@ -110,6 +110,16 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["inspect_str"] = "疯狂熊猫胸针",
                 ["recipe_desc"] = "疯狂熊猫胸针",
             },
+            ["underworld_hana_equipment_great_earth_brooch"] = {
+                ["name"] = "大地胸针",
+                ["inspect_str"] = "大地胸针",
+                ["recipe_desc"] = "大地胸针",
+            },
+            ["underworld_hana_equipment_ice_queen_ring"] = {
+                ["name"] = "冰雪女王指环",
+                ["inspect_str"] = "冰雪女王指环",
+                ["recipe_desc"] = "冰雪女王指环",
+            },
         --------------------------------------------------------------------
 }
 

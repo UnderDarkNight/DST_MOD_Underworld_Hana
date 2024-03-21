@@ -96,6 +96,16 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["inspect_str"] = "Crazy Panda Brooch",
                 ["recipe_desc"] = "Crazy Panda Brooch",
             },
+            ["underworld_hana_equipment_great_earth_brooch"] = {
+                ["name"] = "Great Earth Brooch",
+                ["inspect_str"] = "Great Earth Brooch",
+                ["recipe_desc"] = "Great Earth Brooch",
+            },
+            ["underworld_hana_equipment_ice_queen_ring"] = {
+                ["name"] = "The Ice Queen's Ring",
+                ["inspect_str"] = "The Ice Queen's Ring",
+                ["recipe_desc"] = "The Ice Queen's Ring",
+            },
         --------------------------------------------------------------------
 
 }
