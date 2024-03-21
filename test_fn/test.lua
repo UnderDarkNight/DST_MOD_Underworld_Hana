@@ -232,7 +232,10 @@ local flg,error_code = pcall(function()
                     -- ThePlayer.SoundEmitter:PlaySound("dontstarve/rain/thunder_close")
     ----------------------------------------------------------------------------------------------------------------
     -----
-        TheWorld:PushEvent("ms_sendlightningstrike", Vector3(x,y,z))
+        -- TheWorld:PushEvent("ms_sendlightningstrike", Vector3(x,y,z))
+        for k, v in pairs(ThePlayer.components.inventory.equipslots) do
+            print(k,v)
+        end
     ----------------------------------------------------------------------------------------------------------------
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")
 end)

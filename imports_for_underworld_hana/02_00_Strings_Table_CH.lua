@@ -105,6 +105,11 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["recipe_desc"] = "冥界使者的蝴蝶结",
                 ["action_str"] = "切换",
             },
+            ["underworld_hana_equipment_panda_brooch"] = {
+                ["name"] = "疯狂熊猫胸针",
+                ["inspect_str"] = "疯狂熊猫胸针",
+                ["recipe_desc"] = "疯狂熊猫胸针",
+            },
         --------------------------------------------------------------------
 }
 

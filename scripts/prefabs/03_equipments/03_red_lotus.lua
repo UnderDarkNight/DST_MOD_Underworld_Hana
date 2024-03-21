@@ -11,7 +11,7 @@
     end
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ----
-    local CD_TIME = TUNING.UNDERWORLD_HANA_DEBUGGING_MODE and 1 or 8
+    local CD_TIME = TUNING.UNDERWORLD_HANA_DEBUGGING_MODE and 6 or 8
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     local assets =
     {
@@ -184,7 +184,8 @@ local function fn()
                     doer.SoundEmitter:PlaySound("rifts3/mutated_varg/blast_pre_f17")
                 ------------------------------------------------------------------------------------
                 --- CD
-                    inst.components.rechargeable:Discharge(CD_TIME)
+                    local mult = doer.components.hana_com_spell_cd_modifier:GetMult()
+                    inst.components.rechargeable:Discharge(CD_TIME*mult)
                 ------------------------------------------------------------------------------------
                 --- 耐久
                     inst.components.finiteuses:Use(3)

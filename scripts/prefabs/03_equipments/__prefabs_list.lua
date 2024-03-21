@@ -37,6 +37,7 @@ local prefabs_name_list = {
     "07_innocent",                          --- 无邪
     "08_irradiance",                        --- 辐光
     "09_bow",                               --- 蝴蝶结
+    "10_panda_brooch",                      --- 疯狂熊猫胸针
 
 }
 

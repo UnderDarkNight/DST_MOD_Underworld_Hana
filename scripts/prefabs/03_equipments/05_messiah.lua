@@ -196,7 +196,8 @@
                         CastSpell(inst,doer)
                     ------------------------------------------------------------------------------------
                     --- CD
-                        inst.components.rechargeable:Discharge(CD_TIME)
+                        local mult = doer.components.hana_com_spell_cd_modifier:GetMult()
+                        inst.components.rechargeable:Discharge(CD_TIME*mult)
                     ------------------------------------------------------------------------------------
                     --- 耐久
                         inst.components.finiteuses:Use(3)

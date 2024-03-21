@@ -44,4 +44,9 @@ AddPlayerPostInit(function(inst)
             end)
         end
     ----------------------------------------------------------------------------------------------------------------
+    ---- 武器CD modifier
+        if TheWorld.ismastersim then
+            inst:AddComponent("hana_com_spell_cd_modifier")
+        end
+    ----------------------------------------------------------------------------------------------------------------
 end)

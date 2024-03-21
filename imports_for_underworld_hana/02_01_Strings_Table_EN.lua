@@ -91,6 +91,11 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["recipe_desc"] = "Hana's Bow",
                 ["action_str"] = "Switch",
             },
+            ["underworld_hana_equipment_panda_brooch"] = {
+                ["name"] = "Crazy Panda Brooch",
+                ["inspect_str"] = "Crazy Panda Brooch",
+                ["recipe_desc"] = "Crazy Panda Brooch",
+            },
         --------------------------------------------------------------------
 
 }
