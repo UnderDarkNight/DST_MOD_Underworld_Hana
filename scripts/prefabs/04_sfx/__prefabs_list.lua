@@ -34,6 +34,8 @@ local prefabs_name_list = {
     "04_lightning",                             --- 闪电特效
     "05_antlion_hole",                             --- 地面特效
     "06_shadow_pillar",                             --- 暗影柱子
+    "07_scythe_attack",                             --- 镰刀特效
+    "08_widget_overcome_confinement",               --- 冲破禁锢UI
 
 }
 

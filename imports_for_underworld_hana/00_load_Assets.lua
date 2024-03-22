@@ -13,9 +13,7 @@ local temp_assets = {
 
 	---------------------------------------------------------------------------
 
-	-- Asset("ANIM", "anim/underworld_hana_hud_wellness.zip"),	--- 体质值进度条
-	-- Asset("ANIM", "anim/underworld_hana_item_medical_certificate.zip"),	--- 诊断单 界面
-	-- Asset("ANIM", "anim/underworld_hana_hud_shop_widget.zip"),	--- 商店界面和按钮
+	Asset("ANIM", "anim/underworld_hana_widget_overcome_confinement.zip"),	--- 冲破禁锢的UI
 
 
 

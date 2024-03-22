@@ -137,6 +137,12 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["inspect_str"] = "哈娜的礼物",
                 ["recipe_desc"] = "哈娜的礼物",
             },
+            ["underworld_hana_weapon_scythe_overcome_confinement"] = {
+                ["name"] = "冲破禁锢",
+                ["inspect_str"] = "冲破禁锢",
+                ["recipe_desc"] = "冲破禁锢",
+                ["spell_str"] = "施法",
+            },
         --------------------------------------------------------------------
 }
 

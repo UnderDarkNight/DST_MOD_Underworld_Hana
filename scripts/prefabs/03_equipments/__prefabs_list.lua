@@ -43,6 +43,7 @@ local prefabs_name_list = {
     "13_minotaur_shield",                   --- 牛头人盾牌
     "14_legionnaire_magic_mirror_shield",   --- 军长魔镜盾
     "15_gift",                              --- 哈娜的礼物
+    "16_overcome_confinement",              --- 冲破禁锢
 
 }
 

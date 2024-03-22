@@ -26,6 +26,8 @@ return function(inst)
         "prefabs/01_character/underworld_hana_key_modules/08_messenger_from_the_underworld",        ---- 冥界的使者 BUFF
         "prefabs/01_character/underworld_hana_key_modules/09_cooking",                              ---- 烹饪相关
         "prefabs/01_character/underworld_hana_key_modules/10_undead_authority",                     ---- 不死权能
+        "prefabs/01_character/underworld_hana_key_modules/11_combat",                               ---- 战斗组件
+        "prefabs/01_character/underworld_hana_key_modules/12_overcome_confinement_ui",              ---- 冲破禁锢的UI
 
     }
     for k, lua_addr in pairs(modules) do

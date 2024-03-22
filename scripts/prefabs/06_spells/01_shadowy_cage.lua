@@ -101,6 +101,11 @@ local function fn()
 
         lock_target(target,lock_time,warningtime)
         local x,y,z = target.Transform:GetWorldPosition()
+        
+        inst:ListenForEvent("onremove",function()
+            inst:Remove()
+        end,target)
+
         local position_lock_task = inst:DoPeriodicTask(0.1,function()
             if target.Physics then
                 target.Physics:Teleport(x,y,z)

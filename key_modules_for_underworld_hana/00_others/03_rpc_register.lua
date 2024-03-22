@@ -43,32 +43,36 @@
 ---------------------------------------------------------------------------------------------------------------------------------
 ---- 数据下发
 
-    local function pushevent_server2client(inst,data)
+    local function pushevent_server2client(inst,data,tar_inst)
         if inst and data then
             local _table = json.decode(data)
 
             if _table and _table.event_name then
+                if tar_inst then
+                    tar_inst:PushEvent(_table.event_name,_table.event_data or {})
+                else
+                    inst:PushEvent(_table.event_name,_table.event_data or {})
+                end
                 -- print(_table.event_name)
-                inst:PushEvent(_table.event_name,_table.event_data or {})        
             end
         end
     end
 
 
-    AddClientModRPCHandler("underworld_hana_rpc_namespace","pushevent.server2client.1",function(inst,data)
-        pushevent_server2client(inst,data)
+    AddClientModRPCHandler("underworld_hana_rpc_namespace","pushevent.server2client.1",function(inst,data,tar_inst)
+        pushevent_server2client(inst,data,tar_inst)
     end)
-    AddClientModRPCHandler("underworld_hana_rpc_namespace","pushevent.server2client.2",function(inst,data)
-        pushevent_server2client(inst,data)
+    AddClientModRPCHandler("underworld_hana_rpc_namespace","pushevent.server2client.2",function(inst,data,tar_inst)
+        pushevent_server2client(inst,data,tar_inst)
     end)
-    AddClientModRPCHandler("underworld_hana_rpc_namespace","pushevent.server2client.3",function(inst,data)
-        pushevent_server2client(inst,data)
+    AddClientModRPCHandler("underworld_hana_rpc_namespace","pushevent.server2client.3",function(inst,data,tar_inst)
+        pushevent_server2client(inst,data,tar_inst)
     end)
-    AddClientModRPCHandler("underworld_hana_rpc_namespace","pushevent.server2client.4",function(inst,data)
-        pushevent_server2client(inst,data)
+    AddClientModRPCHandler("underworld_hana_rpc_namespace","pushevent.server2client.4",function(inst,data,tar_inst)
+        pushevent_server2client(inst,data,tar_inst)
     end)
-    AddClientModRPCHandler("underworld_hana_rpc_namespace","pushevent.server2client.5",function(inst,data)
-        pushevent_server2client(inst,data)
+    AddClientModRPCHandler("underworld_hana_rpc_namespace","pushevent.server2client.5",function(inst,data,tar_inst)
+        pushevent_server2client(inst,data,tar_inst)
     end)
 -- SendModRPCToClient(CLIENT_MOD_RPC["underworld_hana_rpc_namespace"]["pushevent.server2client"],inst.userid,inst,json.encode(json_data))
 
@@ -76,29 +80,33 @@
 ---------------------------------------------------------------------------------------------------------------------------------
 ---- 数据上传
 
-    local function pushevent_client2server(player_inst,data_json)
+    local function pushevent_client2server(player_inst,data_json,tar_inst)
         -- print("info server side ",player_inst,data_json)
         pcall(function()
            local event_cmd = json.decode(data_json)
            if event_cmd.event_name then
-                player_inst:PushEvent(event_cmd.event_name,event_cmd.event_data)
+                if tar_inst then
+                    tar_inst:PushEvent(event_cmd.event_name,event_cmd.event_data)
+                else
+                    player_inst:PushEvent(event_cmd.event_name,event_cmd.event_data)
+                end                
            end
         end)
     end
 
-    AddModRPCHandler("underworld_hana_rpc_namespace", "pushevent.client2server.1", function(player_inst,inst,data_json) ----- Register on the server
-        pushevent_client2server(player_inst,data_json)
+    AddModRPCHandler("underworld_hana_rpc_namespace", "pushevent.client2server.1", function(player_inst,inst,data_json,tar_inst) ----- Register on the server
+        pushevent_client2server(player_inst,data_json,tar_inst)
     end)
-    AddModRPCHandler("underworld_hana_rpc_namespace", "pushevent.client2server.2", function(player_inst,inst,data_json) ----- Register on the server
-        pushevent_client2server(player_inst,data_json)
+    AddModRPCHandler("underworld_hana_rpc_namespace", "pushevent.client2server.2", function(player_inst,inst,data_json,tar_inst) ----- Register on the server
+        pushevent_client2server(player_inst,data_json,tar_inst)
     end)
-    AddModRPCHandler("underworld_hana_rpc_namespace", "pushevent.client2server.3", function(player_inst,inst,data_json) ----- Register on the server
-        pushevent_client2server(player_inst,data_json)
+    AddModRPCHandler("underworld_hana_rpc_namespace", "pushevent.client2server.3", function(player_inst,inst,data_json,tar_inst) ----- Register on the server
+        pushevent_client2server(player_inst,data_json,tar_inst)
     end)
-    AddModRPCHandler("underworld_hana_rpc_namespace", "pushevent.client2server.4", function(player_inst,inst,data_json) ----- Register on the server
-        pushevent_client2server(player_inst,data_json)
+    AddModRPCHandler("underworld_hana_rpc_namespace", "pushevent.client2server.4", function(player_inst,inst,data_json,tar_inst) ----- Register on the server
+        pushevent_client2server(player_inst,data_json,tar_inst)
     end)
-    AddModRPCHandler("underworld_hana_rpc_namespace", "pushevent.client2server.5", function(player_inst,inst,data_json) ----- Register on the server
-        pushevent_client2server(player_inst,data_json)
+    AddModRPCHandler("underworld_hana_rpc_namespace", "pushevent.client2server.5", function(player_inst,inst,data_json,tar_inst) ----- Register on the server
+        pushevent_client2server(player_inst,data_json,tar_inst)
     end)
 -- -- SendModRPCToServer(MOD_RPC["underworld_hana_rpc_namespace"]["pushevent.client2server"],self.inst,json.encode(data_table))

@@ -123,6 +123,12 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["inspect_str"] = "Hana's Gift",
                 ["recipe_desc"] = "Hana's Gift",
             },
+            ["underworld_hana_weapon_scythe_overcome_confinement"] = {
+                ["name"] = "Overcome Confinement",
+                ["inspect_str"] = "Overcome Confinement",
+                ["recipe_desc"] = "Overcome Confinement",
+                ["spell_str"] = "Spell Cast",
+            },
         --------------------------------------------------------------------
 
 }

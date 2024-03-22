@@ -12,7 +12,6 @@ local files_name = {
 
 	---------------------------------------------------------------------------------------
 
-		"underworld_hana_weapon_scythe_overcome_confinement",						--- 冲破禁锢
 
 
 		"underworld_hana_item_blissful_memory",										--- 幸福的记忆
@@ -35,6 +34,8 @@ local files_name = {
 		"underworld_hana_weapon_minotaur_shield",									--- 牛头人盾牌
 		"underworld_hana_weapon_legionnaire_magic_mirror_shield",					--- 军长魔镜盾
 		"underworld_hana_weapon_gift",												--- 哈娜的礼物
+		"underworld_hana_weapon_scythe_overcome_confinement",						--- 冲破禁锢
+
 	---------------------------------------------------------------------------------------
 
 }
