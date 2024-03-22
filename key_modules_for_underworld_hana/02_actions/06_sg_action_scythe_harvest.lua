@@ -11,9 +11,9 @@
 
         onenter = function(inst)
 
-            if inst.components.playercontroller ~= nil then
-                inst.components.playercontroller:Enable(false)
-            end
+            -- if inst.components.playercontroller ~= nil then
+            --     inst.components.playercontroller:Enable(false)
+            -- end
             inst.components.locomotor:Stop()
 
             inst.AnimState:SetDeltaTimeMultiplier(1343/800)
@@ -57,6 +57,8 @@
                 ----------------------------------------------------------------------------
                 inst:PerformBufferedAction()
                 inst.sg:RemoveStateTag("abouttoattack")
+                inst.sg:RemoveStateTag("busy")
+                inst.sg:RemoveStateTag("canrotate")
             end),
             TimeEvent(10 * FRAMES, function(inst)
 
@@ -106,9 +108,9 @@
         tags = { "busy" ,"canrotate","underworld_hana_scythe_harvest"},
 
         onenter = function(inst)
-            if inst.components.playercontroller ~= nil then
-                inst.components.playercontroller:Enable(false)
-            end
+            -- if inst.components.playercontroller ~= nil then
+            --     inst.components.playercontroller:Enable(false)
+            -- end
             inst.components.locomotor:Stop()
 
             inst.AnimState:SetDeltaTimeMultiplier(1343/800)
@@ -141,6 +143,9 @@
             TimeEvent(7 * FRAMES, function(inst)
             end),
             TimeEvent(8 * FRAMES, function(inst)
+                inst.sg:RemoveStateTag("abouttoattack")
+                inst.sg:RemoveStateTag("busy")
+                inst.sg:RemoveStateTag("canrotate")
             end),
             TimeEvent(10 * FRAMES, function(inst)
             end),

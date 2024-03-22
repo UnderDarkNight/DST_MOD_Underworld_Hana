@@ -27,7 +27,7 @@ return function(inst)
                 return
             end
             inst.components.combat.externaldamagetakenmultipliers:SetModifier(tempInst,0)
-            block_task = inst:DoTaskInTime(2,function()
+            block_task = inst:DoTaskInTime(1.5,function()
                 inst.components.combat.externaldamagetakenmultipliers:RemoveModifier(tempInst)                
                 block_task = nil
             end)

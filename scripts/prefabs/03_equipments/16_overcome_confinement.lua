@@ -76,11 +76,14 @@
                 return false
             end)
             replica_com:SetPreActionFn(function(inst,doer,target,pt)
-                -- if TheWorld.ismastersim then                    
-                --     doer:DoTaskInTime(0.3,function()
-                        
-                --     end)
-                -- end
+                if TheWorld.ismastersim then                    
+                    -- doer:DoTaskInTime(0.3,function()                        
+                    -- end)
+                    doer.components.combat.externaldamagetakenmultipliers:SetModifier(inst,0)
+                    doer:DoTaskInTime(2.5,function()
+                        doer.components.combat.externaldamagetakenmultipliers:RemoveModifier(inst)                        
+                    end)
+                end
             end)
 
         end)
