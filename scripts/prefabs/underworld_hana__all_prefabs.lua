@@ -10,7 +10,7 @@ local file_folders = {
     "03_equipments",        ---- 装备
     "04_sfx",                ---- 特效
     "05_debuffs",             ---- buff
-    -- "06_spells",             ---- spell
+    "06_spells",             ---- spell
     "07_projectile",        ---- 弹药
     
 }
