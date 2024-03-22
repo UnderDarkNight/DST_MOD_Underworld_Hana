@@ -8,4 +8,8 @@
 
 modimport("key_modules_for_underworld_hana/05_origin_prefab_upgrade/01_player_upgrade.lua")  --- 玩家组件
 
+modimport("key_modules_for_underworld_hana/05_origin_prefab_upgrade/02_monster_ghost.lua")  --- 幽灵怪物
+
+modimport("key_modules_for_underworld_hana/05_origin_prefab_upgrade/03_cursed_monkey_token.lua")  --- 猴子诅咒物品
+
 

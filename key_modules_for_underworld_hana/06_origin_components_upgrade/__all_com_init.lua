@@ -9,3 +9,5 @@ modimport("key_modules_for_underworld_hana/06_origin_components_upgrade/02_healt
 
 modimport("key_modules_for_underworld_hana/06_origin_components_upgrade/03_playerlightningtarget.lua")  --- 玩家防雷
 
+modimport("key_modules_for_underworld_hana/06_origin_components_upgrade/04_cookport_fail_sys__with_com_stewer.lua")  --- 烹饪组件
+

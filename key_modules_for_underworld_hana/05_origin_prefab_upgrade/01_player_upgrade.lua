@@ -16,6 +16,13 @@ AddPlayerPostInit(function(inst)
             end
         end
     ----------------------------------------------------------------------------------------------------------------
+    --- tag 组件
+        if TheWorld.ismastersim then
+            if inst.components.hana_com_tag_sys == nil then
+                inst:AddComponent("hana_com_tag_sys")
+            end
+        end
+    ----------------------------------------------------------------------------------------------------------------
     ---- 坐标跳跃
         if not TheNet:IsDedicated() then --- 加在客户端
             inst:ListenForEvent("underworld_hana_event.player_teleport_client", function(inst,_table)

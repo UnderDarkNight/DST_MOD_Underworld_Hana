@@ -21,6 +21,11 @@ return function(inst)
         "prefabs/01_character/underworld_hana_key_modules/03_spriter_sys",                          ---- 精灵系统
         "prefabs/01_character/underworld_hana_key_modules/04_builder_com_hook_for_tag_sys",         ---- builder 组件 hook
         "prefabs/01_character/underworld_hana_key_modules/05_faded_memory_sys",                     ---- 褪色的记忆
+        "prefabs/01_character/underworld_hana_key_modules/06_the_curse_of_doom",                    ---- 厄运的诅咒
+        "prefabs/01_character/underworld_hana_key_modules/07_graveyard_sanity",                     ---- 坟区 不掉San
+        "prefabs/01_character/underworld_hana_key_modules/08_messenger_from_the_underworld",        ---- 冥界的使者 BUFF
+        "prefabs/01_character/underworld_hana_key_modules/09_cooking",                              ---- 烹饪相关
+        "prefabs/01_character/underworld_hana_key_modules/10_undead_authority",                     ---- 不死权能
 
     }
     for k, lua_addr in pairs(modules) do
