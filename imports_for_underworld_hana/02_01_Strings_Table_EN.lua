@@ -112,6 +112,17 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["recipe_desc"] = "Minotaur's Shield",
                 ["accept_str"] = "Extend skill time",
             },
+            ["underworld_hana_weapon_legionnaire_magic_mirror_shield"] = {
+                ["name"] = "Legionnaire's Mirror Shield",
+                ["inspect_str"] = "Legionnaire's Mirror Shield",
+                ["recipe_desc"] = "Legionnaire's Mirror Shield",
+                ["accept_str"] = "Extend skill time",
+            },
+            ["underworld_hana_weapon_gift"] = {
+                ["name"] = "Hana's Gift",
+                ["inspect_str"] = "Hana's Gift",
+                ["recipe_desc"] = "Hana's Gift",
+            },
         --------------------------------------------------------------------
 
 }

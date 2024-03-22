@@ -41,6 +41,8 @@ local prefabs_name_list = {
     "11_great_earth_brooch",                --- 大地胸针
     "12_ice_queen_ring",                    --- 冰雪女王的戒指
     "13_minotaur_shield",                   --- 牛头人盾牌
+    "14_legionnaire_magic_mirror_shield",   --- 军长魔镜盾
+    "15_gift",                              --- 哈娜的礼物
 
 }
 

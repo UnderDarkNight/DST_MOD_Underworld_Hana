@@ -33,6 +33,8 @@ local files_name = {
 		"underworld_hana_equipment_great_earth_brooch",								--- 大地胸针
 		"underworld_hana_equipment_ice_queen_ring",									--- 冰雪女王指环
 		"underworld_hana_weapon_minotaur_shield",									--- 牛头人盾牌
+		"underworld_hana_weapon_legionnaire_magic_mirror_shield",					--- 军长魔镜盾
+		"underworld_hana_weapon_gift",												--- 哈娜的礼物
 	---------------------------------------------------------------------------------------
 
 }

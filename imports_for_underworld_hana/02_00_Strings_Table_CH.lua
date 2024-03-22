@@ -126,6 +126,17 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["recipe_desc"] = "牛头人盾牌",
                 ["accept_str"] = "延长技能时间",
             },
+            ["underworld_hana_weapon_legionnaire_magic_mirror_shield"] = {
+                ["name"] = "军长魔镜盾",
+                ["inspect_str"] = "军长魔镜盾",
+                ["recipe_desc"] = "军长魔镜盾",
+                ["accept_str"] = "延长技能时间",
+            },
+            ["underworld_hana_weapon_gift"] = {
+                ["name"] = "哈娜的礼物",
+                ["inspect_str"] = "哈娜的礼物",
+                ["recipe_desc"] = "哈娜的礼物",
+            },
         --------------------------------------------------------------------
 }
 

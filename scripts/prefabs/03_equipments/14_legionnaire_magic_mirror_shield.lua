@@ -1,19 +1,19 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 --[[
 
-    牛头人盾牌
+    军团长魔镜盾
 
 ]]--
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------
 local assets =
 {
-    Asset("ANIM", "anim/underworld_hana_weapon_minotaur_shield.zip"),
+    Asset("ANIM", "anim/underworld_hana_weapon_legionnaire_magic_mirror_shield.zip"),
 }
 ------------------------------------------------------------------------------------------------------------------------
 ---
     local function GetStringsTable(prefab_name)
-        return TUNING["underworld_hana.fn"].GetStringsTable(prefab_name or "underworld_hana_weapon_minotaur_shield")
+        return TUNING["underworld_hana.fn"].GetStringsTable(prefab_name or "underworld_hana_weapon_legionnaire_magic_mirror_shield")
     end
 ------------------------------------------------------------------------------------------------------------------------
 ---
@@ -60,8 +60,8 @@ local assets =
         owner.AnimState:HideSymbol("swap_object")
 
 
-        owner.AnimState:OverrideSymbol("lantern_overlay", "underworld_hana_weapon_minotaur_shield", "swap_shield")
-        owner.AnimState:OverrideSymbol("swap_shield",     "underworld_hana_weapon_minotaur_shield", "swap_shield")
+        owner.AnimState:OverrideSymbol("lantern_overlay", "underworld_hana_weapon_legionnaire_magic_mirror_shield", "swap_shield")
+        owner.AnimState:OverrideSymbol("swap_shield",     "underworld_hana_weapon_legionnaire_magic_mirror_shield", "swap_shield")
         
 
         if inst.components.rechargeable:GetTimeToCharge() < SPELL_CD_TIME then
@@ -91,21 +91,38 @@ local assets =
         if TUNING.UNDERWORLD_HANA_DEBUGGING_MODE then
             print("SHELL HOLDING TIME",temp_holding_time)
         end
+
         inst.components.parryweapon:EnterParryState(doer, doer:GetAngleToPoint(pos), temp_holding_time)
-        inst.components.rechargeable:Discharge(SPELL_CD_TIME)
+
+        local spell_cd_time = SPELL_CD_TIME
+        if inst._parry_succeed then --- 如果上一次成功格挡
+            spell_cd_time = spell_cd_time * (TUNING.UNDERWORLD_HANA_DEBUGGING_MODE and 0.1 or 0.9)
+            inst._parry_succeed = nil
+        end
+        inst.components.rechargeable:Discharge(spell_cd_time)
+
     end
 
     local function OnParry(inst, doer, attacker, damage)  ----- 成功格挡
         ----- 镜头震动
             doer:ShakeCamera(CAMERASHAKE.SIDE, 0.1, 0.03, 0.3)
-        ----- 加血
-            if doer and doer.components.health then
-                doer.components.health:DoDelta(10,true)
+        ----- 成功格挡
+            inst._parry_succeed = true
+        ----- 启动伤害倍增计时器
+            if inst._damage_multiplier_timer then
+                inst._damage_multiplier_timer:Cancel()
             end
+            inst._damage_multiplier_timer = inst:DoTaskInTime(5,function()
+                inst._damage_multiplier_timer = nil
+            end)
     end
 
     local function DamageFn(inst) ------ 盾牌伤害        
-        return 34
+        local damage = 51
+        if inst._damage_multiplier_timer then
+            damage = damage * 1.1
+        end
+        return damage
     end
 
     local function OnAttackFn(inst, attacker, target)  --- 主动拿盾抡目标的时候
@@ -121,7 +138,7 @@ local assets =
     end
 
 ------------------------------------------------------------------------------------------------------------------------
-----
+---- 物品接受
     local function acceptable_com_setup(inst)
 
             inst:ListenForEvent("underworld_hana.OnEntityReplicated.hana_com_acceptable",function(inst,replica_com)
@@ -172,8 +189,8 @@ local function fn()
 
     MakeInventoryPhysics(inst)
 
-    inst.AnimState:SetBank("underworld_hana_weapon_minotaur_shield")
-    inst.AnimState:SetBuild("underworld_hana_weapon_minotaur_shield")
+    inst.AnimState:SetBank("underworld_hana_weapon_legionnaire_magic_mirror_shield")
+    inst.AnimState:SetBuild("underworld_hana_weapon_legionnaire_magic_mirror_shield")
     inst.AnimState:PlayAnimation("idle")
 
     inst:AddTag("toolpunch")
@@ -224,8 +241,8 @@ local function fn()
         inst:AddComponent("inspectable")
         inst:AddComponent("inventoryitem")
         -- inst.components.inventoryitem:ChangeImageName("voidcloth_scythe")
-        inst.components.inventoryitem.imagename = "underworld_hana_weapon_minotaur_shield"
-        inst.components.inventoryitem.atlasname = "images/inventoryimages/underworld_hana_weapon_minotaur_shield.xml"
+        inst.components.inventoryitem.imagename = "underworld_hana_weapon_legionnaire_magic_mirror_shield"
+        inst.components.inventoryitem.atlasname = "images/inventoryimages/underworld_hana_weapon_legionnaire_magic_mirror_shield.xml"
     ---------------------------------------------------------------------------------------------------------------
     ---- 
         inst:AddComponent("weapon")
@@ -233,7 +250,7 @@ local function fn()
         inst.components.weapon:SetOnAttack(OnAttackFn)
 
         inst:AddComponent("armor")
-        inst.components.armor:InitCondition(   300   ,    0.2    )
+        inst.components.armor:InitCondition(   300   ,    0.3    )
                         ---                   耐久度     减伤系数
     ---------------------------------------------------------------------------------------------------------------
     ---- 
@@ -286,4 +303,4 @@ local function fn()
     return inst
 end
 
-return Prefab("underworld_hana_weapon_minotaur_shield", fn, assets)
+return Prefab("underworld_hana_weapon_legionnaire_magic_mirror_shield", fn, assets)
