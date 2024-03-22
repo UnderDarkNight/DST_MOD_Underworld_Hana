@@ -233,9 +233,12 @@ local flg,error_code = pcall(function()
     ----------------------------------------------------------------------------------------------------------------
     -----
         -- TheWorld:PushEvent("ms_sendlightningstrike", Vector3(x,y,z))
-        for k, v in pairs(ThePlayer.components.inventory.equipslots) do
-            print(k,v)
-        end
+        -- for k, v in pairs(ThePlayer.components.inventory.equipslots) do
+        --     print(k,v)
+        -- end
+        ThePlayer:ListenForEvent("newstate",function(_,_table)
+            print("newstate",_table.statename)
+        end)
     ----------------------------------------------------------------------------------------------------------------
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")
 end)

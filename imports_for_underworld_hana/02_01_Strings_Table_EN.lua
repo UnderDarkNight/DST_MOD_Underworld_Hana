@@ -106,6 +106,12 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["inspect_str"] = "The Ice Queen's Ring",
                 ["recipe_desc"] = "The Ice Queen's Ring",
             },
+            ["underworld_hana_weapon_minotaur_shield"] = {
+                ["name"] = "Minotaur's Shield",
+                ["inspect_str"] = "Minotaur's Shield",
+                ["recipe_desc"] = "Minotaur's Shield",
+                ["accept_str"] = "Extend skill time",
+            },
         --------------------------------------------------------------------
 
 }

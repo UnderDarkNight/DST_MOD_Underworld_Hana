@@ -120,6 +120,12 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["inspect_str"] = "冰雪女王指环",
                 ["recipe_desc"] = "冰雪女王指环",
             },
+            ["underworld_hana_weapon_minotaur_shield"] = {
+                ["name"] = "牛头人盾牌",
+                ["inspect_str"] = "牛头人盾牌",
+                ["recipe_desc"] = "牛头人盾牌",
+                ["accept_str"] = "延长技能时间",
+            },
         --------------------------------------------------------------------
 }
 
