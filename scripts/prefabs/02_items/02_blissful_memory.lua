@@ -4,10 +4,10 @@
 
 local assets =
 {
-    Asset("ANIM", "anim/underworld_hana_item_faded_memory.zip"),
+    Asset("ANIM", "anim/underworld_hana_item_blissful_memory.zip"),
 
-    Asset( "IMAGE", "images/inventoryimages/underworld_hana_item_faded_memory.tex" ),
-    Asset( "ATLAS", "images/inventoryimages/underworld_hana_item_faded_memory.xml" ),
+    Asset( "IMAGE", "images/inventoryimages/underworld_hana_item_blissful_memory.tex" ),
+    Asset( "ATLAS", "images/inventoryimages/underworld_hana_item_blissful_memory.xml" ),
 }
 
 local function fn()
@@ -18,8 +18,8 @@ local function fn()
     inst.entity:AddDynamicShadow()
 
     inst.entity:AddAnimState()
-    inst.AnimState:SetBank("underworld_hana_item_faded_memory")
-    inst.AnimState:SetBuild("underworld_hana_item_faded_memory")
+    inst.AnimState:SetBank("underworld_hana_item_blissful_memory")
+    inst.AnimState:SetBuild("underworld_hana_item_blissful_memory")
     inst.AnimState:PlayAnimation("idle",true)
     -- inst.AnimState:SetTime(math.random(8000)/1000)
     local scale = 2
@@ -36,7 +36,7 @@ local function fn()
     ---- 右键使用
 
         inst:ListenForEvent("underworld_hana.OnEntityReplicated.hana_com_workable",function(inst,replica_com)
-            replica_com:SetText("underworld_hana_item_faded_memory",STRINGS.ACTIONS.USEITEM)
+            replica_com:SetText("underworld_hana_item_blissful_memory",STRINGS.ACTIONS.USEITEM)
             -- replica_com:SetSGAction("doshortaction")
             replica_com:SetSGAction("dolongaction")
             replica_com:SetTestFn(function(inst,doer)
@@ -50,7 +50,7 @@ local function fn()
             inst:AddComponent("hana_com_workable")
             inst.components.hana_com_workable:SetActiveFn(function(inst,doer)
                 inst.components.stackable:Get():Remove()
-                doer:PushEvent("faded_memory_used")
+                doer:PushEvent("blissful_memory_used")
                 return true
             end)
         end
@@ -62,8 +62,8 @@ local function fn()
     inst:AddComponent("inspectable")
 
     inst:AddComponent("inventoryitem")
-    inst.components.inventoryitem.imagename = "underworld_hana_item_faded_memory"
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/underworld_hana_item_faded_memory.xml"
+    inst.components.inventoryitem.imagename = "underworld_hana_item_blissful_memory"
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/underworld_hana_item_blissful_memory.xml"
 
 
     inst:AddComponent("stackable")  -- 可叠堆
@@ -76,4 +76,4 @@ local function fn()
     return inst
 end
 
-return Prefab("underworld_hana_item_faded_memory", fn, assets)
+return Prefab("underworld_hana_item_blissful_memory", fn, assets)

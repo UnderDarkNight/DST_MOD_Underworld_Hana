@@ -20,7 +20,7 @@ return function(inst)
         "prefabs/01_character/underworld_hana_key_modules/02_cloak_sys",                            ---- 披风系统
         "prefabs/01_character/underworld_hana_key_modules/03_spriter_sys",                          ---- 精灵系统
         "prefabs/01_character/underworld_hana_key_modules/04_builder_com_hook_for_tag_sys",         ---- builder 组件 hook
-        "prefabs/01_character/underworld_hana_key_modules/05_faded_memory_sys",                     ---- 褪色的记忆
+        "prefabs/01_character/underworld_hana_key_modules/05_memory_sys",                           ---- 褪色的记忆/幸福的记忆
         "prefabs/01_character/underworld_hana_key_modules/06_the_curse_of_doom",                    ---- 厄运的诅咒
         "prefabs/01_character/underworld_hana_key_modules/07_graveyard_sanity",                     ---- 坟区 不掉San
         "prefabs/01_character/underworld_hana_key_modules/08_messenger_from_the_underworld",        ---- 冥界的使者 BUFF
@@ -28,6 +28,8 @@ return function(inst)
         "prefabs/01_character/underworld_hana_key_modules/10_undead_authority",                     ---- 不死权能
         "prefabs/01_character/underworld_hana_key_modules/11_combat",                               ---- 战斗组件
         "prefabs/01_character/underworld_hana_key_modules/12_overcome_confinement_ui",              ---- 冲破禁锢的UI
+        "prefabs/01_character/underworld_hana_key_modules/13_level_sys_setup",                      ---- 等级系统安装
+        "prefabs/01_character/underworld_hana_key_modules/14_level_and_power_ui_setup",             ---- 等级、能量系统UI安装
 
     }
     for k, lua_addr in pairs(modules) do

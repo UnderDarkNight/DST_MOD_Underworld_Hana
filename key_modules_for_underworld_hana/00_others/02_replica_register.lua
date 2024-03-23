@@ -20,6 +20,8 @@ AddReplicableComponent("hana_com_tag_sys")  --- 独立tag系统
 
 AddReplicableComponent("hana_com_right_click_playerself")  --- 右键玩家自己
 
+AddReplicableComponent("hana_com_level_sys")  --- 玩家等级系统
+
 
 
 

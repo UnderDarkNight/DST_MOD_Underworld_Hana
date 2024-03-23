@@ -14,4 +14,6 @@ modimport("key_modules_for_underworld_hana/05_origin_prefab_upgrade/03_cursed_mo
 
 modimport("key_modules_for_underworld_hana/05_origin_prefab_upgrade/04_focalpoint_sound_hook.lua")  --- client端事件控制器hook
 
+modimport("key_modules_for_underworld_hana/05_origin_prefab_upgrade/05_boss_drop_blueprint.lua")  --- Boss 掉落
+
 

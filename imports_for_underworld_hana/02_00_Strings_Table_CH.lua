@@ -35,6 +35,11 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
                 ["inspect_str"] = "褪色的记忆",
                 ["recipe_desc"] = "褪色的记忆",
             },
+            ["underworld_hana_item_blissful_memory"] = {
+                ["name"] = "幸福的记忆",
+                ["inspect_str"] = "幸福的记忆",
+                ["recipe_desc"] = "幸福的记忆",
+            },
         --------------------------------------------------------------------
         --- 03_equipments
             ["underworld_hana_equipment_cloak_1"] = {

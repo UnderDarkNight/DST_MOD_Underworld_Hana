@@ -15,6 +15,10 @@ return function(inst)
 
 
     inst:ListenForEvent("underworld_hana_event.stewer.cooking_started",function(_,cookpot)
+
+        if not inst.components.hana_com_tag_sys:HasTag("clumsy") then   ---解除笨手笨脚
+            return
+        end
             
                     if not TUNING.UNDERWORLD_HANA_DEBUGGING_MODE  then
                         if inst.components.health:GetPercent() < 0.4 or inst.components.sanity:GetPercent() < 0.3 then
@@ -84,6 +88,9 @@ return function(inst)
 
 
     inst:ListenForEvent("underworld_hana_event.stewer.harvest",function(inst,cookpot)
+        if not inst.components.hana_com_tag_sys:HasTag("clumsy") then   ---解除笨手笨脚
+            return
+        end
         if TUNING.UNDERWORLD_HANA_DEBUGGING_MODE or math.random(1000) <= 100 then
             
                 if cookpot and cookpot.components.lootdropper then

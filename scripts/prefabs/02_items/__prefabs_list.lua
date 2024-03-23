@@ -29,6 +29,7 @@ local prefabs_name_list = {
 
 
     "01_faded_memory",                           --- 褪色的记忆
+    "02_blissful_memory",                        --- 幸福的记忆
 
 }
 

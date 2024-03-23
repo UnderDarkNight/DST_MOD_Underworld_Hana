@@ -20,6 +20,18 @@ TUNING["underworld_hana.Strings"][this_language] = TUNING["underworld_hana.Strin
             --     ["recipe_desc"] = " en 测试描述666",
             -- },        
         --------------------------------------------------------------------
+        --- 02_items
+            ["underworld_hana_item_faded_memory"] = {
+                ["name"] = "Faded Memory",
+                ["inspect_str"] = "Faded Memory",
+                ["recipe_desc"] = "Faded Memory",
+            },
+            ["underworld_hana_item_blissful_memory"] = {
+                ["name"] = "Blissful Memory",
+                ["inspect_str"] = "Blissful Memory",
+                ["recipe_desc"] = "Blissful Memory",
+            },
+        --------------------------------------------------------------------
         --- 03_equipments
             ["underworld_hana_equipment_cloak_1"] = {
                 ["name"] = "Hana's Cloak",

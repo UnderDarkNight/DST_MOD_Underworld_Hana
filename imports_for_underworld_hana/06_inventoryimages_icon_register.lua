@@ -14,12 +14,15 @@ local files_name = {
 
 
 
-		"underworld_hana_item_blissful_memory",										--- 幸福的记忆
 	---------------------------------------------------------------------------------------
 	-- 02_items
 		"underworld_hana_item_faded_memory",										--- 褪色的记忆
+		"underworld_hana_item_blissful_memory",										--- 幸福的记忆
 	---------------------------------------------------------------------------------------
 	-- 03_equipments
+		"underworld_hana_equipment_cloak_1",											--- 披风
+		"underworld_hana_equipment_cloak_2",											--- 披风
+		"underworld_hana_equipment_cloak_3",											--- 披风
 		"underworld_hana_weapon_scythe",											--- 冥界之镰
 		"underworld_hana_weapon_red_lotus",											--- 红莲
 		"underworld_hana_weapon_astartes",											--- 阿斯塔特

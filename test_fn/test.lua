@@ -241,12 +241,21 @@ local flg,error_code = pcall(function()
         -- end)
     ----------------------------------------------------------------------------------------------------------------
     -----
-        ThePlayer.SoundEmitter:KillAllSounds()
+        -- ThePlayer.SoundEmitter:KillAllSounds()
         -- local tempsound = "dontstarve/common/together/spawn_vines/spawnportal_jacob"
         -- local tempsound = "dontstarve/common/together/spawn_vines/vines"
         -- local tempsound = "dontstarve/music/music_epicfight"
         -- local tempsound = "dontstarve/music/music_danger"
         -- ThePlayer.SoundEmitter:PlaySound(tempsound)
+
+    ----------------------------------------------------------------------------------------------------------------
+    -----
+            -- local level = ThePlayer.replica.hana_com_level_sys:GetLevel()
+            -- print("level : ",level)
+            ThePlayer.components.hana_com_level_sys:LevelDoDelta(-5)
+
+    ----------------------------------------------------------------------------------------------------------------
+    ----- 
 
     ----------------------------------------------------------------------------------------------------------------
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")

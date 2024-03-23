@@ -1,10 +1,11 @@
 local assets =
 {
-    Asset("ANIM", "anim/armor_wood.zip"),
+    Asset("ANIM", "anim/underworld_hana_equipment_cloak_widget.zip"),
 }
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ---- 安装容器界面
+    local SLOT_DELTA_Y = -10
     local function container_Widget_change3(theContainer)
         -----------------------------------------------------------------------------------
         ----- 容器界面名 --- 要独特一点，避免冲突
@@ -20,12 +21,12 @@ local assets =
                 {
                     slotpos =
                     {
-                        Vector3(-(64 + 12), 0, 0),
-                        Vector3(0, 0, 0),
-                        Vector3(64 + 12, 0, 0),
+                        Vector3(-(64 + 12), 0 +SLOT_DELTA_Y , 0),
+                        Vector3(0, 0 +SLOT_DELTA_Y , 0),
+                        Vector3(64 + 12, 0 +SLOT_DELTA_Y , 0),
                     },
-                    animbank = "ui_chest_3x1",
-                    animbuild = "ui_chest_3x1",
+                    animbank = "underworld_hana_equipment_cloak_widget",
+                    animbuild = "underworld_hana_equipment_cloak_widget",
                     pos = Vector3(600, -280, 0),
                 },
                 type = "chest",
@@ -73,11 +74,11 @@ local assets =
                 {
                     slotpos =
                     {
-                        Vector3(-(32 + 12), 0, 0), 
-                        Vector3(32 + 12, 0, 0),
+                        Vector3(-(32 + 12), 0 +SLOT_DELTA_Y , 0), 
+                        Vector3(32 + 12, 0 +SLOT_DELTA_Y , 0),
                     },
-                    animbank = "ui_chest_3x1",
-                    animbuild = "ui_chest_3x1",
+                    animbank = "underworld_hana_equipment_cloak_widget",
+                    animbuild = "underworld_hana_equipment_cloak_widget",
                     pos = Vector3(600, -280, 0),
                 },
                 type = "chest",
@@ -125,10 +126,10 @@ local assets =
                 {
                     slotpos =
                     {
-                        Vector3(0, 0, 0),     
+                        Vector3(0, 0 +SLOT_DELTA_Y , 0),     
                     },
-                    animbank = "ui_chest_3x1",
-                    animbuild = "ui_chest_3x1",
+                    animbank = "underworld_hana_equipment_cloak_widget",
+                    animbuild = "underworld_hana_equipment_cloak_widget",
                     pos = Vector3(600, -280, 0),
                 },
                 type = "chest",
@@ -199,15 +200,14 @@ local assets =
 
 
 local function onequip(inst, owner)
-
-    owner.AnimState:OverrideSymbol("swap_body", "armor_wood", "swap_body")
-    owner:AddTag("underworld_hana_equipment_cloak.equipped")
-    
+    -- owner.AnimState:OverrideSymbol("swap_body", "armor_wood", "swap_body")
+    owner.AnimState:ClearOverrideSymbol("swap_body")    
+    -- owner.components.hana_com_tag_sys:AddTag("cloak_equipped")
 end
 
 local function onunequip(inst, owner)
     owner.AnimState:ClearOverrideSymbol("swap_body")
-    owner:RemoveTag("underworld_hana_equipment_cloak.equipped")
+    -- owner.components.hana_com_tag_sys:RemoveTag("cloak_equipped")
 end
 
 local function common_fn()
@@ -399,7 +399,7 @@ local function common_fn()
         inst:AddComponent("inspectable")
 
         inst:AddComponent("inventoryitem")
-        inst.components.inventoryitem:ChangeImageName("armorwood")
+        -- inst.components.inventoryitem:ChangeImageName("armorwood")
         -- inst.components.inventoryitem.imagename = "panda_fisherman_supply_pack"
         -- inst.components.inventoryitem.atlasname = "images/inventoryimages/panda_fisherman_supply_pack.xml"
 
@@ -512,7 +512,8 @@ local function fn_1()
     if not TheWorld.ismastersim then
         return inst
     end
-
+    inst.components.inventoryitem.imagename = "underworld_hana_equipment_cloak_1"
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/underworld_hana_equipment_cloak_1.xml"
     return inst
 end
 
@@ -524,7 +525,8 @@ local function fn_2()
     if not TheWorld.ismastersim then
         return inst
     end
-
+    inst.components.inventoryitem.imagename = "underworld_hana_equipment_cloak_2"
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/underworld_hana_equipment_cloak_2.xml"
     return inst
 end
 local function fn_3()
@@ -535,7 +537,8 @@ local function fn_3()
     if not TheWorld.ismastersim then
         return inst
     end
-
+    inst.components.inventoryitem.imagename = "underworld_hana_equipment_cloak_3"
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/underworld_hana_equipment_cloak_3.xml"
     return inst
 end
 
