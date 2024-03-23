@@ -107,11 +107,18 @@ local function fn()
         end,target)
 
         local position_lock_task = inst:DoPeriodicTask(0.1,function()
+            if not target:IsValid() then
+                inst:Remove()
+                return
+            end
             if target.Physics then
                 target.Physics:Teleport(x,y,z)
             end
             target.Transform:SetPosition(x,y,z)
         end)
+        inst:ListenForEvent("death",function()
+            inst:Remove()
+        end,target)
         -- target.Physics:SetActive(false)
         inst:DoTaskInTime(lock_time + warningtime,function()
             -- target.Physics:SetActive(true)
