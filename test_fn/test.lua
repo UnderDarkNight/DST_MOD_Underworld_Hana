@@ -240,52 +240,14 @@ local flg,error_code = pcall(function()
         --     print("newstate",_table.statename)
         -- end)
     ----------------------------------------------------------------------------------------------------------------
+    -----
+        ThePlayer.SoundEmitter:KillAllSounds()
+        -- local tempsound = "dontstarve/common/together/spawn_vines/spawnportal_jacob"
+        -- local tempsound = "dontstarve/common/together/spawn_vines/vines"
+        -- local tempsound = "dontstarve/music/music_epicfight"
+        -- local tempsound = "dontstarve/music/music_danger"
+        -- ThePlayer.SoundEmitter:PlaySound(tempsound)
 
-        local function overcome_confinement_ui_setup(inst,HUD)
-            -- -------------------------------------------------------------------
-            --     local main_scale = 0.6
-            -- -------------------------------------------------------------------
-            -- local root = HUD:AddChild(Widget())
-            -- -------- 设置锚点
-            --     root:SetHAnchor(0) -- 设置原点x坐标位置，0、1、2分别对应屏幕中、左、右
-            --     root:SetVAnchor(0) -- 设置原点y坐标位置，0、1、2分别对应屏幕中、上、下
-            --     root:SetPosition(0,-150)
-            --     root:MoveToBack()
-            -- -------- 设置缩放模式
-            --     root:SetScaleMode(SCALEMODE_FIXEDSCREEN_NONDYNAMIC)
-            -- -------------------------------------------------------------------
-            -- --------  underworld_hana_widget_overcome_confinement
-            --     local SPELL_COINS_UI = root:AddChild(UIAnim())
-            --     SPELL_COINS_UI:GetAnimState():SetBank("underworld_hana_widget_overcome_confinement")
-            --     SPELL_COINS_UI:GetAnimState():SetBuild("underworld_hana_widget_overcome_confinement")
-            --     SPELL_COINS_UI:GetAnimState():PlayAnimation("idle")
-            --     -- SPELL_COINS_UI:GetAnimState():SetMultColour(1,1,1,0.5)
-            --     SPELL_COINS_UI:SetScale(main_scale,main_scale,main_scale)
-            -- -------------------------------------------------------------------
-            -- -------------------------------------------------------------------
-            --     return root
-            -- -------------------------------------------------------------------
-            -------------------------------------------------------------------
-                local scale = 2
-                local tempInst = inst:SpawnChild("underworld_hana_fx_widget_overcome_confinement")
-                tempInst.Transform:SetPosition(0,-2,0)
-                tempInst.AnimState:SetScale(scale,scale,scale)
-                tempInst.AnimState:SetSortOrder(10)
-                tempInst.AnimState:Hide("COIN_2")
-                tempInst.AnimState:Hide("COIN_3")
-                tempInst.AnimState:Hide("COIN_4")
-                return tempInst
-            -------------------------------------------------------------------
-        end
-        if ThePlayer.__temp_hud then
-            -- if ThePlayer.__temp_hud.Kill then
-            --     ThePlayer.__temp_hud:Kill()
-            -- end
-            -- if ThePlayer.__temp_hud.Remove then
-                ThePlayer.__temp_hud:Remove()
-            -- end
-        end
-        ThePlayer.__temp_hud = overcome_confinement_ui_setup(ThePlayer,ThePlayer.HUD)
     ----------------------------------------------------------------------------------------------------------------
     print("WARNING:PCALL END   +++++++++++++++++++++++++++++++++++++++++++++++++")
 end)

@@ -12,4 +12,6 @@ modimport("key_modules_for_underworld_hana/05_origin_prefab_upgrade/02_monster_g
 
 modimport("key_modules_for_underworld_hana/05_origin_prefab_upgrade/03_cursed_monkey_token.lua")  --- 猴子诅咒物品
 
+modimport("key_modules_for_underworld_hana/05_origin_prefab_upgrade/04_focalpoint_sound_hook.lua")  --- client端事件控制器hook
+
 

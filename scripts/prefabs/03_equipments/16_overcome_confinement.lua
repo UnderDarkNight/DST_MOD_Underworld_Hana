@@ -195,7 +195,9 @@
                     inst.owner.components.hana_com_rpc_event:PushEvent("SPELL_COIN_REFRESH",inst.SPELL_COIN,inst)
                     inst.owner.components.hana_com_rpc_event:PushEvent("overcome_confinement_ui.refresh",inst.SPELL_COIN)
                 end
-                print("当前技能豆",inst.SPELL_COIN)
+                if TUNING.UNDERWORLD_HANA_DEBUGGING_MODE then
+                    print("当前技能豆",inst.SPELL_COIN)
+                end
 
             end)
         --------------------------------------------------------------------------------------
