@@ -51,13 +51,13 @@
     local tag_events = {
         ["danger"] = {
             ["start"] = function()
-                -- print("fake error danger start")
+                print("fake error danger start")
                 if ThePlayer then
                     ThePlayer.replica.hana_com_rpc_event:PushEvent("underworld_hana_event.danger_music_start")
                 end
             end,
             ["stop"] = function()
-                -- print("fake error danger stop")
+                print("fake error danger stop")
                 if ThePlayer then
                     ThePlayer.replica.hana_com_rpc_event:PushEvent("underworld_hana_event.danger_music_stop")
                 end
@@ -72,16 +72,16 @@
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     
     AddPrefabPostInit(
-        "world",
+        "focalpoint",
         function(inst)
 
-            inst:DoTaskInTime(0,function()
-                if TheFocalPoint then
+
+
                         
                     
-                    Hook_target_SoundEmitter(TheFocalPoint)
+                    Hook_target_SoundEmitter(inst)
 
-                    if type(TheFocalPoint.SoundEmitter) ~= "table" then
+                    if type(inst.SoundEmitter) ~= "table" then
                         print("error : hook focalpoint SoundEmitter fail")
                         return
                     else
@@ -90,8 +90,8 @@
 
                     ------------------------------------------------------------------------------------
                     ----
-                        local old_PlaySound = TheFocalPoint.SoundEmitter.PlaySound
-                        TheFocalPoint.SoundEmitter.PlaySound = function(self,sound,tag,...)
+                        local old_PlaySound = inst.SoundEmitter.PlaySound
+                        inst.SoundEmitter.PlaySound = function(self,sound,tag,...)
                             -- print("TheFocalPoint",sound,tag)
                             old_PlaySound(self,sound,tag,...)
                             tag = tostring(tag)
@@ -104,8 +104,8 @@
                         end
                     ------------------------------------------------------------------------------------
                     ---- 
-                        local old_KillSound = TheFocalPoint.SoundEmitter.KillSound
-                        TheFocalPoint.SoundEmitter.KillSound = function(self,tag,...)
+                        local old_KillSound = inst.SoundEmitter.KillSound
+                        inst.SoundEmitter.KillSound = function(self,tag,...)
                             -- print("TheFocalPoint kill ",tag)
                             old_KillSound(self,tag,...)
                             tag = tostring(tag)
@@ -115,8 +115,8 @@
                         end
                     ------------------------------------------------------------------------------------
 
-                end
-            end)
+                
+            
         end
     )
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

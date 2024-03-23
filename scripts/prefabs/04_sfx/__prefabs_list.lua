@@ -36,6 +36,7 @@ local prefabs_name_list = {
     "06_shadow_pillar",                             --- 暗影柱子
     "07_scythe_attack",                             --- 镰刀特效
     "08_widget_overcome_confinement",               --- 冲破禁锢UI
+    "09_shadow_shell",                              --- 暗影护盾fx
 
 }
 

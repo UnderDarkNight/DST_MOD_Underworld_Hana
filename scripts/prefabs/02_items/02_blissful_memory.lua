@@ -55,6 +55,42 @@ local function fn()
             end)
         end
     ------------------------------------------------------------------------------
+    ---- 对目标使用
+        inst:ListenForEvent("underworld_hana.OnEntityReplicated.hana_com_item_use_to",function(inst,replica_com)
+            replica_com:SetTestFn(function(inst,target,doer)
+                if target and target.replica.inventoryitem then
+                    return true
+                end
+                return false
+            end)
+            replica_com:SetSGAction("dolongaction")
+            replica_com:SetText("underworld_hana_item_blissful_memory",STRINGS.ACTIONS.REPAIR.GENERIC)
+        end)
+        if TheWorld.ismastersim then
+            inst:AddComponent("hana_com_item_use_to")
+            inst.components.hana_com_item_use_to:SetActiveFn(function(inst,target,doer)
+                local ret_flag = false
+                if target then
+                    if target.components.finiteuses then
+                        ret_flag = true
+                        local ret_percent = target.components.finiteuses:GetPercent() + 0.5
+                        ret_percent = math.clamp(ret_percent,0,1)
+                        target.components.finiteuses:SetPercent(ret_percent)
+                    end
+                    if target.components.armor then
+                        ret_flag = true
+                        local ret_percent = target.components.armor:GetPercent() + 0.5
+                        ret_percent = math.clamp(ret_percent,0,1)
+                        target.components.armor:SetPercent(ret_percent)
+                    end
+                end
+                if ret_flag then
+                    inst.components.stackable:Get():Remove()                    
+                end
+                return ret_flag
+            end)
+        end
+    ------------------------------------------------------------------------------
     if not TheWorld.ismastersim then
         return inst
     end

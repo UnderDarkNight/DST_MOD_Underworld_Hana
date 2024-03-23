@@ -30,6 +30,8 @@ return function(inst)
         "prefabs/01_character/underworld_hana_key_modules/12_overcome_confinement_ui",              ---- 冲破禁锢的UI
         "prefabs/01_character/underworld_hana_key_modules/13_level_sys_setup",                      ---- 等级系统安装
         "prefabs/01_character/underworld_hana_key_modules/14_level_and_power_ui_setup",             ---- 等级、能量系统UI安装
+        "prefabs/01_character/underworld_hana_key_modules/15_power_battle_sys",                     ---- 战斗能量值系统
+        "prefabs/01_character/underworld_hana_key_modules/16_inventory_apply_damage_hook_for_buff", ---- hook API 给屏蔽伤害
 
     }
     for k, lua_addr in pairs(modules) do

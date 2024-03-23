@@ -29,6 +29,11 @@ local prefabs_name_list = {
 
 
     "01_reinforcement",                           --- 不死权能BUFF
+    "02_01_power_sanity_up_by_onhitother",                  --- 能量值BUFF
+    "02_02_power_sanity_mult",                              --- 能量值BUFF
+    "02_03_power_weapon_cost_half",                         --- 能量值BUFF
+    "02_04_power_health_up_by_onhitother",                  --- 能量值BUFF
+    "02_05_skeleton_protect",                               --- 能量值BUFF
 
 
 }

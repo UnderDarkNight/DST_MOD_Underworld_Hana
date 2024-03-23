@@ -117,14 +117,20 @@ nil,
         end
         local old_power_num = self.power
         local new_power_num = math.clamp(old_power_num + num,0,self.max_power)
-        if old_power_num ~= new_power_num then
-            self.inst:PushEvent("hana_com_level_sys.power",{
-                old = old_power_num,
-                new = new_power_num,
-            })
-        end
         self.power = new_power_num
+        -- 广播通知
+            if old_power_num ~= new_power_num then
+                self.inst:PushEvent("hana_com_level_sys_power_dodelta",{
+                    old = old_power_num,
+                    new = new_power_num,
+                })
+            end
     end
+    function hana_com_level_sys:GetPower()
+        return self.power,self.power/100
+    end
+
+
 ------------------------------------------------------------------------------------------------------------------------------
     function hana_com_level_sys:OnSave()
         self:ActiveOnSaveFns()

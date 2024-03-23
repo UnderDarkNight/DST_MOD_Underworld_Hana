@@ -210,15 +210,26 @@
                 return old_OnMouseButton(self,button, down, x, y)
             end
         ---------------------------------------------------------------------
-        inst.replica.hana_com_level_sys:SetLevelUpdateFn(function(inst,com,level)
-            -- print("replica level change to ",level)
-            level_str:SetString("lv."..tostring(level))
-        end)
-        inst.replica.hana_com_level_sys:SetPowerUpdateFn(function()
-            local power,power_percent = inst.replica.hana_com_level_sys:GetPower()
-            temp_bage.num:SetString(tostring(math.floor(power)))
-            temp_bage.anim:GetAnimState():SetPercent("anim",1-power_percent)
-        end)
+        ---- 刷新事件
+            inst.replica.hana_com_level_sys:SetLevelUpdateFn(function(inst,com,level)
+                -- print("replica level change to ",level)
+                level_str:SetString("lv."..tostring(level))
+            end)
+            inst.replica.hana_com_level_sys:SetPowerUpdateFn(function()
+                local power,power_percent = inst.replica.hana_com_level_sys:GetPower()
+                temp_bage.num:SetString(tostring(math.floor(power)))
+                temp_bage.anim:GetAnimState():SetPercent("anim",1-power_percent)
+            end)
+            inst:ListenForEvent("hana_power_hud_hide",function()
+                root:Hide()
+            end)
+            inst:ListenForEvent("hana_power_hud_show",function()
+                root:Show()
+            end)
+            if inst:HasTag("playerghost") then
+                root:Hide()
+            end
+        ---------------------------------------------------------------------
     end
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -229,4 +240,14 @@ return function(inst)
             client_side_widget_setup(inst,inst.HUD)                
         end
     end)
+
+    if TheWorld.ismastersim then
+        
+        inst:ListenForEvent("ms_becameghost",function()
+            inst.components.hana_com_rpc_event:PushEvent("hana_power_hud_hide")
+        end)
+        inst:ListenForEvent("ms_respawnedfromghost",function()
+            inst.components.hana_com_rpc_event:PushEvent("hana_power_hud_show")
+        end)
+    end
 end
